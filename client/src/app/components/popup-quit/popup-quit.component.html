@@ -1,0 +1,13 @@
+<div class="background">
+    <div class="gameEnded">
+        <p>{{ message }}</p>
+
+        <app-custom-button [title]="buttonTitle" (click)="closePopup(true)"></app-custom-button>
+
+        <app-custom-button title="Non" *ngIf="!gameEnded" (click)="closePopup(false)"></app-custom-button>
+
+        <app-custom-button title="Reprise Vidéo" *ngIf="gameEnded && (router.url==='/game'||router.url==='/game1v1')"
+            routerLink="/replay"></app-custom-button>
+
+    </div>
+</div>

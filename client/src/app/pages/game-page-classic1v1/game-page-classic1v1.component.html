@@ -1,0 +1,35 @@
+<div class="container">
+    <div>
+        <section class="play-area-container">
+            <div class="play-area">
+                <p class="nom-joueur">Vous</p>
+                <app-counter class="scaling" #counter [name]="username"></app-counter>
+                <app-play-area id="pa1" tabindex="0" [url]="link1" [diff]="this.diff" #leftPlayArea></app-play-area>
+            </div>
+            <div class="play-area-middle">
+                <app-logo class="logo"></app-logo>
+                <app-game-info class="scaling"></app-game-info>
+                <app-chronometre class="scaling" #timer></app-chronometre>
+                <app-custom-button *ngIf="router.url !== '/replay'" class="scaling" title="Abandonner"
+                    iconClass="fas fa-poo" (click)="wantToQuit = true"></app-custom-button>
+                <div class="popup-quit">
+                    <app-popup-quit *ngIf="wantToQuit" [gameEnded]="false" [message]="message"
+                        [buttonTitle]="buttonTitle" (wantToQuitChange)="onContinue($event)"></app-popup-quit>
+                </div>
+            </div>
+            <div class="play-area">
+                <p class="nom-joueur">Adversaire</p>
+                <app-counter class="scaling" #counter2 [name]="username2"></app-counter>
+                <app-play-area id="pa2" tabindex="0" [url]="link2" [diff]="this.diff" #rightPlayArea></app-play-area>
+            </div>
+        </section>
+    </div>
+    <app-sidebar (clicked)="clickChat()" (unclicked)="closeChat()" [username]="username" [canSend]="true"
+        #sidebar></app-sidebar>
+</div>
+<app-popup-quit *ngIf="gameEnded" [gameEnded]="true" [message]="message" [isSolo]="false"
+    buttonTitle="Retour au menu"></app-popup-quit>
+<div class="canvas-container">
+    <canvas id="canvas1" #canvas1 width="640" height="480"></canvas>
+    <canvas id="canvas2" #canvas2 width="640" height="480"></canvas>
+</div>

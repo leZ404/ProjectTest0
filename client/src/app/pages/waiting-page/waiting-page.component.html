@@ -1,0 +1,23 @@
+<div id="wrapper">
+    <div id="container">
+        <div>
+            <h1><strong>{{gameName}}</strong></h1>
+        </div>
+        <div id="players">
+            <div class="inlineText" *ngIf="player1Name">
+                <span><strong>{{this.player1Name}}</strong> a rejoint la partie</span>
+            </div>
+            <div class="inlineText" *ngIf="player2Name">
+                <span><strong>{{this.player2Name}}</strong> a rejoint la partie</span>
+                <i class="fa fa-close" (click)="rejectPlayer()"></i>
+            </div>
+            <div *ngIf="!player2Name">
+                <span id="waitTitle">En attente d'un deuxième joueur...</span>
+            </div>
+        </div>
+        <div>
+            <button id="btnLeave" [routerLink]="['/selecto']">Annuler</button>
+            <button id="btnStart" (click)="startGame()" [disabled]="!player2Name || !gameName">Jouer</button>
+        </div>
+    </div>
+</div>

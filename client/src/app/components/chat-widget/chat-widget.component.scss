@@ -1,0 +1,192 @@
+#wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+#container {
+    height: 70vh;
+    width: 25vw;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 4fr 1fr;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgb(0, 34, 86);
+
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+#container > div:first-child {
+    height: 100%;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#scrollBox {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
+    border-radius: 10px;
+    background: rgb(0, 50, 126);
+}
+
+#scrollBox .scroll-to-bottom-button {
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#scrollBox .scroll-to-bottom-button.hide-button {
+    display: none;
+}
+
+#scrollBox .scroll-to-bottom-button.show-button {
+    display: block;
+}
+
+#scrollBox > div {
+    min-height: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+    scroll-snap-align: end;
+}
+
+.message {
+    margin: 12px;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 16px;
+    background-color: rgba(238, 255, 0, 0.4);
+}
+
+.message > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+.opponent {
+    background-color: rgba(255, 60, 0, 0.4);
+}
+.system {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.event {
+    background-color: rgba(255, 255, 255, 0.474);
+}
+
+.sender {
+    color: whitesmoke;
+    font-weight: normal;
+}
+
+.time {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+.body {
+    width: 70%;
+    word-break: break-all;
+    text-transform: none;
+    font-family: 'Arial', sans-serif;
+    font-weight: normal;
+}
+
+#scrollBox::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+}
+/* Track */
+#scrollBox::-webkit-scrollbar-track {
+    width: 5px;
+}
+
+/* Handle */
+#scrollBox::-webkit-scrollbar-thumb {
+    width: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Handle on hover */
+#scrollBox::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#container > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    height: 75%;
+    background: rgb(0, 50, 126);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    color: whitesmoke;
+}
+
+button {
+    padding: 5px 0;
+    width: 100px;
+    background-color: rgb(0, 50, 126);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(0, 50, 126, 0.5);
+}
+
+button[disabled] {
+    background-color: rgb(0, 50, 126, 0.5);
+    cursor: auto;
+}
+
+:host {
+    display: block;
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    border: 1px solid #ccc;
+    z-index: 1050;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#chatTitle {
+    text-align: center;
+    // padding: 10px 0;
+    font-size: 20px;
+    // color: #fff;
+    // background-color: rgb(0, 50, 126);
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}

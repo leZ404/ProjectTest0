@@ -1,0 +1,8 @@
+<div id="container">
+    <app-game-page *ngIf="replayService.isSolo" #gamePage></app-game-page>
+    <app-game-page-classic1v1 *ngIf="!replayService.isSolo" #gamePage1v1></app-game-page-classic1v1>
+    <div id="bottom">
+        <app-control-video (videoToolEmitter)="updateChrono($event)" #controlBar></app-control-video>
+        <app-custom-button title="Quitter" routerLink="/"></app-custom-button>
+    </div>
+</div>

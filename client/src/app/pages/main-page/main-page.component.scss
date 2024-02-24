@@ -1,0 +1,79 @@
+.container {
+    min-height: 100vh;
+    height: auto;
+}
+app-logo {
+    scale: 500%;
+    position: absolute;
+    left: 1000px;
+    top: 300px;
+    z-index: -1;
+}
+@font-face {
+    font-family: 'spaceranger';
+    src: url('../../../assets/fonts/spaceranger.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'spaceranger';
+}
+
+h1 {
+    scale: 150%;
+    position: relative;
+    top: 30px;
+    color: white;
+    font-family: 'spaceranger';
+}
+.justified {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    position: relative;
+    scale: 125%;
+    left: -180px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.chat-toggle-button button.chat-open {
+    background-color: #004085;
+}
+
+.chat-toggle-button button:hover {
+    background-color: #0056b3;
+}
+
+.team-name {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    color: white;
+}
+
+.header-item {
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-item {
+    text-align: center;
+}
+
+.footer-item p :nth-child(even) {
+    color: aquamarine;
+}
+.footer-item p :nth-child(odd) {
+    color: rgb(51, 51, 149);
+}
+.chat-toggle-button button {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    z-index: 1050;
+    cursor: pointer;
+}

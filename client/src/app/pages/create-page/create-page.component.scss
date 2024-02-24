@@ -1,0 +1,155 @@
+#containeur{
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#up{
+  grid-area: up;
+  display: grid;
+  grid-template-areas:"titles titles titles" 
+                      "originalZone centeredMenu modifiedZone";
+  grid-template-columns: 5fr 1fr 5fr;
+  
+}
+#down{
+  grid-area: down;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#titles{
+  grid-area: titles;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5vw;
+}
+
+#titles span{
+  padding: 5px;
+  background: linear-gradient(5deg, rgb(255, 176, 58, 1) 10%, white 40%, rgb(41, 223, 255, 0.8) 110%);
+  background-clip: text;
+  color: transparent;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#original{
+  grid-area: originalZone;
+}
+
+#modified {
+  grid-area: modifiedZone;
+}
+#modified, #original{
+  border-style: solid;
+  border: 0;
+  align-self: center;
+  justify-self: center;
+}
+
+
+#back, #confirm{
+  border-radius: 10px;
+}
+
+#textField{
+  grid-area: textBar;
+  width: 55vw;
+  height: 5vh;
+  justify-self: center;
+  margin-top: 10vh;
+  font-size: x-large;
+  border-radius: 10px;
+  color: white;
+  background-color: transparent;
+  border-color: aquamarine;
+  box-shadow:
+  0 0 10px rgb(0, 255, 229),
+  -10px 0 50px rgb(0, 152, 217),
+  10px 0 50px rgb(0, 255, 255);
+}
+
+#menu{
+  grid-area: centeredMenu;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btnGroup3 {
+  display: grid;
+  grid-template-areas:  'title title'
+                        'format format' 
+                        'left right'
+                        'double double';
+                      
+  gap: 7px;
+  padding: 0px;
+  color: white;
+}
+
+.btnGroup2 {
+  display: grid;
+  grid-template-areas:  'title title'
+                        'format format' 
+                        'left right';
+                      
+  gap: 7px;
+  padding: 0px;
+  color: white;
+}
+
+.btnGroup1 {
+  display: grid;
+  grid-template-areas:  'title'
+                        'format' 
+                        'double';
+                      
+  gap: 7px;
+  padding: 0px;
+  color: white;
+}
+
+.title{
+  grid-area: title;
+  text-align: center;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.format{
+  grid-area: format;
+  text-align: center;
+  font-size: small;
+}
+
+.doubleBtn {
+  grid-area: double;
+}
+
+.simpleBtnL {
+  grid-area: left;
+}
+
+.simpleBtnR {
+  grid-area: right;
+}
+
+input[type='file']{
+  display: none;
+}
+
+.btn {
+  box-shadow: 0px 0px 30px rgba(0, 217, 255, 1);
+  font-size: 20px;
+}
+
+.btnBas{
+  width:50px;
+}
+

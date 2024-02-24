@@ -1,0 +1,117 @@
+<div id="containeur">
+    <div id="up">
+        <div id="titles">
+            <span id="title">Originale</span>
+            <span id="title">Modifiée</span>
+        </div>
+        <app-drawing-zone id="original" #leftChild
+            (foregroundChanged)="createPageService.updateCanvasHistory($event, 0)"></app-drawing-zone>
+        <div id="menu">
+            <div class="btnGroup3">
+                <span class="title">
+                    téléverser
+                    <i class="far fa-image"></i>
+                </span>
+                <span class="format">
+                    Format : .bmp 640x480
+                </span>
+
+                <label for="uploadImageL" class="simpleBtnL btn">
+                    <i class="fa fa-arrow-left"></i>
+                </label>
+                <input id="uploadImageL" type='file' accept="image/bmp"
+                    (change)="gameCreationToolsService.setImage($event)">
+
+                <label for="uploadImageR" class="simpleBtnR btn">
+                    <i class="fa fa-arrow-right"></i>
+                </label>
+                <input id="uploadImageR" type='file' accept="image/bmp"
+                    (change)="gameCreationToolsService.setImage($event)">
+
+                <label for="uploadImageBoth" class="doubleBtn btn">
+                    <i class="fa fa-arrow-left"></i>
+                    &
+                    <i class="fa fa-arrow-right"></i>
+                </label>
+                <input id="uploadImageBoth" type='file' accept="image/bmp"
+                    (change)="gameCreationToolsService.setImage($event)">
+            </div>
+            <div class="btnGroup3">
+                <span class="title">
+                    réinitialiser
+                    <i class="far fa-image"></i>
+                </span>
+
+                <button id="0" class="simpleBtnL btn" (click)="dialogService.openDialogReinit($event)">
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+
+                <button id="1" class="simpleBtnR btn" (click)="dialogService.openDialogReinit($event)">
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+
+                <button id="2" class="doubleBtn btn" (click)="dialogService.openDialogReinit($event)">
+                    <i class="fa fa-arrow-left"></i>
+                    &
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+
+            </div>
+            <div class="btnGroup3">
+                <span class="title">
+                    réinitialiser
+                    <i class="fa-regular fa-clone"></i>
+                </span>
+
+                <button id="0" class="simpleBtnL btn" (click)="gameCreationToolsService.reinitForeground($event)">
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+
+                <button id="1" class="simpleBtnR btn" (click)="gameCreationToolsService.reinitForeground($event)">
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+
+                <button id="2" class="doubleBtn btn" (click)="gameCreationToolsService.reinitForeground($event)">
+                    <i class="fa fa-arrow-left"></i>
+                    &
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+
+            </div>
+            <div class="btnGroup3">
+                <span class="title">
+                    Dupliquer
+                    <i class="fa-regular fa-clone"></i>
+                </span>
+
+                <button id="0" class="simpleBtnL btn" (click)="gameCreationToolsService.duplicateForeground($event)">
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+
+                <button id="1" class="simpleBtnR btn" (click)="gameCreationToolsService.duplicateForeground($event)">
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+                <span class="title">
+                    Dupliquer
+                    <i class="fa-regular fa-clone"></i>
+                </span>
+                <button id="2" class="doubleBtn btn" (click)="gameCreationToolsService.exchangeForeground()">
+                    <i class="fa fa-arrow-left"></i>
+                    &
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <app-drawing-zone id="modified" #rightChild
+            (foregroundChanged)="createPageService.updateCanvasHistory($event,1)"></app-drawing-zone>
+    </div>
+    <div id="down">
+        <app-tool-bar id="toolbar"></app-tool-bar>
+        <button class="btn btnBas" (click)="undo()"> <i class="fa-solid fa-rotate-left"></i> </button>
+        <button class="btn btnBas" (click)="createPageService.undoAll()"> <i class="fa-solid fa-trash"></i></button>
+        <button class="btn btnBas" (click)="redo()"> <i class="fa-solid fa-rotate-right"></i> </button>
+        <app-custom-button id="confirm" class="button" (click)="dialogService.openDialogConfirm()" title="Créer"
+            iconClass="fas fa-plus"></app-custom-button>
+    </div>
+</div>

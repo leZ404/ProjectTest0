@@ -1,0 +1,18 @@
+<div id="channelWrapper">
+    <div id="channelContainer">
+        <h3>Liste des Canaux</h3>
+        <div id="channelList">
+            <div *ngFor="let channel of channelList" class="channelItem">
+                <button type="button" (click)="selectChannel(channel.name)" class="channelButton">
+                    {{ channel.name }}
+                </button>
+            </div>
+        </div>
+        <div id="channelActions">
+            <input #channelName type="text" placeholder="Nom du Canal">
+            <button (click)="createChannel(channelName.value)">+</button>
+        </div>
+    </div>
+    <app-chat-widget *ngIf="selectedChannel" [channel]="selectedChannel" [username]="authentificationService.username"
+        [canSend]="false"></app-chat-widget>
+</div>

@@ -1,0 +1,91 @@
+  td {
+    padding: 0px 20px;
+    color:aliceblue;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+  }
+  
+  .configuration-title {
+    padding: 5px;
+    background: linear-gradient(5deg, rgb(255, 176, 58, 1) 10%, white 40%, rgb(41, 223, 255, 0.8) 110%);
+    background-clip: text;
+    color: transparent;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .games-container {
+    height: 40em;
+    overflow-y: scroll;
+    background-color: rgb(3, 4, 69);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th {
+    background-color: #040e6f;;
+    color: aliceblue;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:hover {
+    background-color: #7d21ce;
+  }
+
+  tbody {
+    //height: 10em;
+    overflow: scroll;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .nav-container {
+    text-align: center;
+  }
+  
+  .changePage {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  
+  .changePage:hover {
+    background-color: #3e8e41;
+  }
+
+  td.crossed-out {
+    text-decoration: line-through;
+  }
+
+  

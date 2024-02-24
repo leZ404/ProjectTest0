@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 class="configuration-title">Constantes de Jeu</h2>
+    <div class="constants">
+        <div class="constant">
+            <label>Temps initial (secondes):</label>
+            <input type="range" min="30" max="60" step="5" [(ngModel)]="initialTime" />
+            <span>{{ initialTime }}</span>
+        </div>
+        <div class="constant">
+            <label>Temps retiré par indice utilisé (secondes):</label>
+            <input type="range" min="0" max="10" [(ngModel)]="penalty" />
+            <span>{{ penalty }}</span>
+        </div>
+        <div class="constant">
+            <label>Temps ajouté par différence trouvée (secondes):</label>
+            <input type="range" min="0" max="10" [(ngModel)]="timeWon" />
+            <span>{{ timeWon }}</span>
+        </div>
+    </div>
+    <div class="buttons-list">
+        <app-custom-button title="Sauvegarder" iconClass="fas fa-save" (click)="setConstants()"></app-custom-button>
+        <app-custom-button title="Réinitialiser" iconClass="fas fa-repeat"
+            (click)="openDialogConfirmResetConstants()"></app-custom-button>
+    </div>
+</div>

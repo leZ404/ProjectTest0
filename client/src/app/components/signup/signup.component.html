@@ -1,0 +1,57 @@
+<div class="login-form-container">
+    <form [formGroup]="signupFormGroup" (ngSubmit)="signupProcess()" enctype="multipart/form-data">
+        <h2>Inscription</h2>
+
+        <div class="form-group">
+            <label for="username">Nom d'utilisateur:</label>
+            <input type="text" id="username" class="form-control" maxlength="10" formControlName="username">
+            <div *ngIf="signupFormGroup.get('username')?.touched && signupFormGroup.get('username')?.errors">
+                <small class="text-danger" *ngIf="signupFormGroup.get('username')?.errors?.required">*Le nom
+                    d'utilisateur est obligatoire.</small>
+                <small class="text-danger" *ngIf="signupFormGroup.get('username')?.errors?.maxLength">*Le nom
+                    d'utilisateur ne doit pas dépasser 10 caractères.</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="form-control" maxlength="50" formControlName="email">
+            <div *ngIf="signupFormGroup.get('email')?.touched && signupFormGroup.get('email')?.errors">
+                <small class="text-danger" *ngIf="signupFormGroup.get('email')?.errors?.required">*L'email est
+                    obligatoire.</small>
+                <small class="text-danger" *ngIf="signupFormGroup.get('email')?.errors?.email">*Veuillez entrer un email
+                    valide.</small>
+                <small class="text-danger" *ngIf="signupFormGroup.get('email')?.errors?.pattern">*Le format de l'email
+                    est invalide.</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" class="form-control" formControlName="password">
+            <div *ngIf="signupFormGroup.get('password')?.touched && signupFormGroup.get('password')?.errors">
+                <small class="text-danger" *ngIf="signupFormGroup.get('password')?.errors?.required">*Le mot de passe
+                    est obligatoire.</small>
+                <small class="text-danger" *ngIf="signupFormGroup.get('password')?.errors?.minLength">*Le mot de passe
+                    doit contenir au moins 4 caractères.</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirmer le mot de passe:</label>
+            <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword">
+            <div *ngIf="signupFormGroup.errors?.notSame && signupFormGroup.get('confirmPassword')?.touched">
+                <small class="text-danger">*Les mots de passe ne correspondent pas.</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="avatar">Avatar (optionnel):</label>
+            <input type="file" id="avatar" class="form-control" formControlName="avatar">
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!signupFormGroup.valid">S'inscrire</button>
+
+        <button type="button" class="btn btn-secondary" routerLink="/login">Retour à la connexion</button>
+    </form>
+</div>

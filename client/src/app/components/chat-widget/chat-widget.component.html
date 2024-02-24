@@ -1,0 +1,35 @@
+<div id="wrapper">
+    <div id="container">
+        <div id="chatTitle">{{ channel }}</div>
+        <div>
+            <div id="scrollBox">
+                <div>
+                    <div id="messageWrapper">
+                        <!-- Section Messages -->
+                        <div class="message"
+                            [class.opponent]="message.senderType === senderType.PLAYER && this.authService.username !== message.sender"
+                            *ngFor="let message of messages">
+                            <div>
+                                <span class="sender">{{ message.sender }}</span>
+                                <span class="time">{{ message.time }}</span>
+                            </div>
+                            <div>
+                                <span class="body" [innerHTML]="message.body"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div id="textArea">
+                <!-- Nouveau Message -->
+                <textarea maxlength="800" (keydown)="handleEnterPress($event)" (input)="setContent($event)"
+                    placeholder="Type a message" [(ngModel)]="messageContent" [disabled]="canSend!"></textarea>
+            </div>
+            <!-- <button (click)="sendMessage(username, messageContent)">Send</button> -->
+            <button (click)="send()" [disabled]="canSend!">Envoyer <i class="fas fa-envelope"></i></button>
+        </div>
+    </div>
+</div>

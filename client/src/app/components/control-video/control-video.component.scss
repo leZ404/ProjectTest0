@@ -1,0 +1,22 @@
+#parent{
+    background-color: rgba(127, 255, 212,0.3);
+    border-color: aquamarine;
+    display: flex;
+    flex-direction : column;
+    width: 55vw;
+    height: 40px;
+    border-radius: 10px;
+    align-items: center;
+    box-shadow:
+    0 0 10px rgb(0, 255, 229),
+    -10px 0 50px rgb(0, 152, 217),
+    10px 0 50px rgb(0, 255, 255);
+}
+#background{
+    display: flex;
+    flex-direction : row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}

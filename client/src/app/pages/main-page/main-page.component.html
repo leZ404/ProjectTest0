@@ -1,0 +1,27 @@
+<app-logo></app-logo>
+<div class="container justified">
+    <h1 class="header-item">{{ title }}</h1>
+    <div class="justified">
+        <app-custom-button class="button" routerLink="/selecto" title="Mode Classique"
+            iconClass="fas fa-rocket"></app-custom-button>
+        <app-custom-button class="button" routerLink="/limited-selecto" title="Mode Temps Limité"
+            iconClass="fas fa-clock"></app-custom-button>
+        <app-custom-button class="button" routerLink="/config" title="Configuration"
+            iconClass="fas fa-gear"></app-custom-button>
+        <div class="chat-toggle-button">
+            <button [ngClass]="{'chat-open': isChatVisible}" (click)="toggleChat()">💬 Chat</button>
+        </div>
+
+        <app-custom-button class="button" (click)="logout()" title="Déconnexion">
+        </app-custom-button>
+        <app-chat-widget *ngIf="isChatVisible">></app-chat-widget>
+    </div>
+    <footer class="footer-item">
+        <h4 class="team-name">Équipe 209</h4>
+        <p>
+            <span>Ilias Bakhbukh</span>, <span>Mathieu Brosseau </span>, <span> Mohamed Chaoui</span>, <span>Yanis
+                Halouani </span>,
+            <span> Kezouh</span>, <span>Selamet Zamanoglu</span>
+        </p>
+    </footer>
+</div>

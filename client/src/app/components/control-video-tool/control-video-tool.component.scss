@@ -1,0 +1,19 @@
+button{
+    background: 0;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    
+   box-shadow:
+   0 0 5px rgb(0, 255, 229),
+   -5px 0 25px rgb(0, 152, 217),
+   5px 0 25px rgb(0, 255, 255);
+
+   color: white;
+}
+button:hover{
+    cursor: pointer;
+}
+button:focus{
+    transform: scale(0.8);
+}

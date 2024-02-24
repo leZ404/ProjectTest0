@@ -1,0 +1,34 @@
+<div>
+    <div class="grid-item" [style.background-image]="img1URL" *ngIf="gameCard">
+        <div class="button-container">
+            <a *ngIf="page === 'Selecto'">
+                <button (click)="openDialogEnterUsernameSolo()">Solo</button>
+                <button (click)="openDialogEnterUsernameDuo()" *ngIf="!isWaiting" [disabled]="isFull">Créer</button>
+                <button (click)="openDialogEnterUsernameDuo()" *ngIf="isWaiting" [disabled]="isFull">Joindre</button>
+            </a>
+            <a *ngIf="page === 'Config'">
+                <button (click)="openDialogDeleteCard()">Supprimer</button>
+                <button (click)="openDialogReinitCard()">Réinitialiser</button>
+            </a>
+        </div>
+        <div class="leaderboard">
+            <p class="padding">Top 3</p>
+            <div class="leaderboard-item">
+                <p>Solo</p>
+                <p *ngFor="let times of timesSolo">{{ times.player }} {{ times.duration/1000 }}s</p>
+            </div>
+            <div class="leaderboard-item">
+                <p>1vs1</p>
+                <p *ngFor="let times of times1v1">{{ times.player }} {{ times.duration/1000 }}s</p>
+            </div>
+        </div>
+        <div class="description-box" [style.background-color]="difficulty === 'Facile' ? 'green' : 'red'">
+            <p id="name">
+                {{ name }}
+            </p>
+            <p id="difficulty">
+                {{ difficulty }}
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<app-custom-button class="menu" routerLink="/home" title="Menu Principal" iconClass="fas fa-home"
+    *ngIf="isSelectoPage"></app-custom-button>
+<h2 class="configuration-title">Fiches de jeu</h2>
+<div class="cards">
+    <app-game-card-list [first]="first" [last]="last" [gameCards]="gameCards"></app-game-card-list>
+</div>
+<app-custom-button class="prev" title="Précédent" iconClass="fas fa-arrow-left" (click)="decrement()"
+    [disabled]="first === 0"></app-custom-button>
+<app-custom-button class="next" title="Suivant" iconClass="fas fa-arrow-right" (click)="increment()"
+    [disabled]="!isNextPage()"></app-custom-button>

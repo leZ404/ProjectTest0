@@ -1,0 +1,16 @@
+<div class="top-bar">
+    <app-custom-button routerLink="/" title="Menu Principal" iconClass="fas fa-home"></app-custom-button>
+    <app-custom-button routerLink="/config" title="Configuration" iconClass="fas fa-gear"></app-custom-button>
+    <app-custom-button routerLink="/config/create-sheet" title="Créer Fiche"
+        iconClass="fas fa-palette"></app-custom-button>
+    <app-custom-button routerLink="/config/game-constants" title="Constantes de Jeu"
+        iconClass="fas fa-calculator"></app-custom-button>
+    <app-custom-button routerLink="/config/game-history" title="Historique" iconClass="fas fa-list"></app-custom-button>
+</div>
+<router-outlet></router-outlet>
+<div class="buttons-list" *ngIf="router.url === '/config'">
+    <app-custom-button title="Réinitialiser tous les meilleurs temps" iconClass="fas fa-repeat"
+        (click)="openDialogConfirmResetAllBestTimes()"></app-custom-button>
+    <app-custom-button title="Supprimer toutes les fiches" iconClass="fas fa-trash"
+        (click)="openDialogConfirmDeleteAllCards()"></app-custom-button>
+</div>
